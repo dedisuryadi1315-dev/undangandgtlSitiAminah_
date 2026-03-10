@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Undangan Pernikahan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        .hero{
+        position:relative;
+        z-index:10;
+    }
+        .menu{
+            pointer-events:auto;
+    }
+        .menu a{
+            text-decoration:none;
+            color:#b48a5a;
+            font-weight:bold;
+            cursor:pointer;
+            pointer-events:auto;
+}
+        .hero{
+            background:url("bg-undangan.jpg") center/cover no-repeat;
+            min-height:100vh;
+            background-attachment:fixed;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+           align-items:center;
+}
+    .menu{
+            position:sticky;
+            top:0;
+            background:white;
+            padding:10px;
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            z-index:9999;
+            }
+
+            .menu a{
+            text-decoration:none;
+            color:#b48a5a;
+            font-weight:bold;
+            cursor:pointer;
+        }           
+ 
+
+      
+
+            @keyframes jatuh{
+            0%{
+            transform:translateY(-50px);
+            }
+
+            100%{
+            transform:translateY(100vh);
+            }
+            }
+                    .amplop{
+            width:300px;
+            height:200px;
+            background:#caa24c;
+            position:relative;
+            cursor:pointer;
+            border-radius:6px;
+            box-shadow:0 10px 20px rgba(0,0,0,0.3);
+            }
+
+          .tutup{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100px;
+            background:#b48a5a;
+            clip-path:polygon(0 0,100% 0,50% 100%);
+            transition: transform 0.8s ease;
+            transform-origin:top;
+            }
+
+            .amplop{
+            transform-style:preserve-3d;
+            transition:transform 0.5s;
+            }
+
+            .amplop:hover{
+            transform:scale(1.05);
+            }
+
+            .amplop.buka .tutup{
+            transform:rotateX(180deg);
+            }
+
+            .amplop.buka .tutup{
+            transform:rotateX(180deg);
+            }
+
+            .isi-amplop{
+            position:absolute;
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            color:white;
+            text-align:center;
+            padding:10px;
+            }
+                    html{
+            scroll-behavior:smooth;
+            }
+       
+
+        
+
+      
+        .close-btn {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            padding: 6px 20px;
+            font-family: 'Great Vibes', cursive;
+            /* Ganti font */
+            font-size: 12px;
+            line-height: 1;
+            min-width: 0;
+            width: auto;
+            /* Ganti ukuran */
+            font-weight: normal;
+            cursor: pointer;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #8c6a2f, #caa24c, #6f5223);
+            color: #ffffff;
+            border: 2px solid #e6c97a;
+            transition: 0.2s ease;
+        }
+
+        .btn-close {
+            padding: 6px 20px;
+            min-height: 30px;
+            background: rgba(202, 162, 76, 0.2);
+            /* awal transparan */
+            border: 2px solid rgba(202, 162, 76, 1);
+            border-radius: 20px;
+            color: #4b2e2e;
+            font-weight: normal;
+            font-size: 12px;
+            font-family: 'Arial', sans-serif !important;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 1000;
+            pointer-events: auto;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-close:hover {
+            background: rgba(105, 76, 13, 0.4);
+            color: #000000;
+        }
+
+        .btn-close:active {
+            background: linear-gradient(135deg, #8c6a2f, #caa24c, #6f5223);
+            color: #000000;
+        }
+
+        .tombol-Close {
+            font-size: 8px;
+            /* mengecilkan tulisan */
+            padding: 4px 10px;
+            /* mengecilkan ukuran tombol */
+            border: 2px solid gold;
+            color: #130e0c;
+            /* coklat tua kemerahan */
+            background: transparent;
+            border-radius: 20px;
+        }
+
+        .btn {
+            width: 60px;
+            /* lebar tombol */
+            height: 3px;
+            /* tinggi tombol */
+            background: transparent;
+            color: #0c0606;
+            border: 2px solid #caa24c;
+            border-radius: 30px;
+            /* sudut melengkung, setengah tinggi = oval */
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            /* ukuran teks */
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #caa24c;
+            color: rgb(20, 15, 15);
+        }
+
+        h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 12px;
+        }
+
+        h5 {
+            margin-bottom: 5px;
+        }
+
+        .tanggal {
+            margin-top: 0;
+            font-weight: bold;
+        }
+
+        .tanggal {
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+        }
+
+        .time-box {
+            width: 30px;
+            /* sebelumnya misalnya 100px */
+            height: 30px;
+            border-radius: 50%;
+            background: #b08d57;
+            /* coklat gold */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .circle {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #8c6a2f, #caa24c, #6f5223);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            color: #0f0909;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+            border: 2px solid #e6c97a;
+            /* outline gold */
+            box-shadow: 0 0 0 0.0px #3b2200;
+            /* outline luar coklat tua */
+        }
+
+        .circle p {
+            font-size: 10px;
+            margin: 0;
+        }
+
+        .container {
+            width:100%;
+            max-width:1100px;
+            margin:auto;
+            padding:40px;;
+            text-align:center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+        #isi{
+            background:
+            linear-gradient(rgba(255,242,230,0.7), rgba(248,211,173,0.3)),
+            url("bg-undangan.jpg");
+            background-size: cover;
+            background-position:center;
+            background-attachment: fixed;
+            display:none;
+            padding:60px 20px;
+        }
+        #cover {
+            height: 100vh;
+            background-image: url("cover.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+
+      body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("backgroud-undangan1.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+     
+
+        .nama {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            color: gold;
+
+            -webkit-text-stroke: 0.7px #000000;
+          
+            text-shadow:
+                2px 2px 8px rgba(0, 0, 0, 0.7),
+                0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* COVER */
+
+        .cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #c8a96a, #f0e2c3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 10;
+        }
+
+        .cover h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+       .hero{
+            width:100%;
+            min-height:100vh;
+            background:url("bg-undangan.jpg") center/cover no-repeat;
+            background-attachment:fixed;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-size:cover;
+            padding:60px 20px;
+        }
+
+        .open-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #b48a5a;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        /* KONTEN */
+
+        .container {
+            display: none;
+            padding: 30px;
+        }
+
+        .nama {
+            font-size: 35px;
+            color: #b48a5a;
+            margin: 20px 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top:20px;
+        }
+        .gallery img{
+            width:280px;
+            max-width:300px;
+            height:200px;
+            object-fit:cover;
+            border-radius:12px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+        @media (max-width:768px){
+
+            /* CSS untuk layar kecil (HP) */
+
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* LIGHTBOX */
+
+        .lightbox{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.8);
+            display:none;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .lightbox img{
+            max-width:90%;
+            max-height:90%;
+            border-radius:10px;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            background: #b48a5a;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+      
+</style>
+</head>
+
+<body>
+        
+    
+        <div class="cover" id="cover">
+
+<div class="amplop" onclick="Open()">
+
+<div class="tutup"></div>
+
+<div class="isi-amplop">
+<h2>Undangan Pernikahan</h2>
+<p>Kepada Yth</p>
+<p id="namaTamu">Tamu Undangan</p>
+<p>(Klik Amplop)</p>
+</div>
+
+</div>
+
+        </div>
+
+        <!-- COVER -->
+
+   
+
+        <!-- KONTEN -->
+
+    
+   
+        <div class="container" id="isi">
+            <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#lokasi">Lokasi</a>
+            <a href="#hadiah">Hadiah</a>
+            </div>
+            <h3 id="home">Mohon Do'a & Restu </h3>
+            <p>
+            Dengan penuh rasa syukur kami mengundang Bapak/Ibu/Saudara/i
+            untuk hadir di acara pernikahan kami.
+            </p>
+
+            <div class="nama">Refly Febriyanto & Siti Aminah</div>
+            <h5>Akan melangsungkan resepsi pernikahan pada:</h5>
+            <p class="tanggal">13 April 2026</p>
+            <p>Akad Nikah : 09.00 WIB</p>
+            <p>Resepsi : 10.00 WIB - Selesai</p>
+            <p>Lokasi : Gedung Serbaguna</p>
+          
+
+
+
+        <div class="countdown">
+
+            <div class="circle">
+                <span id="days">0</span>
+                <p>hari</p>
+            </div>
+
+            <div class="circle">
+                <span id="hours">0</span>
+                <p>jam</p>
+            </div>
+
+            <div class="circle">
+                <span id="minutes">0</span>
+                <p>menit</p>
+            </div>
+
+            <div class="circle">
+                <span id="seconds">0</span>
+                <p>detik</p>
+            </div>
+            
+
+        </div>
+          
+
+
+
+             
+          <h3 id="galeri">Galeri Foto</h3>
+       
+       
+      
+        </div>
+
+            <div id="lightbox" class="lightbox" onclick="closeModal()">
+            <img id="lightbox-img">
+            </div>
+
+        <div class="gallery">
+            <img src="foto2.jpg" alt="">
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+            <img src="foto6.jpg">
+            <img src="foto5.jpg">
+            <img src="foto7.jpg">
+            <img src="foto8.jpg">
+            <img src="foto1.jpg">
+            <img src="foto9.jpg">
+        </div>
+            <br>
+        <button id="lokasi" onclick="maps()">Lihat Lokasi</button>
+            <br><br>
+
+        <a href="https://wa.me/6285780038380" target="_blank">
+
+        <button>Konfirmasi Kehadiran</button></a>
+
+        <h3>Ucapan & Doa</h3>
+
+        <input type="text" id="namaUcapan" placeholder="Nama Anda">
+
+        <br><br>
+
+        <textarea id="pesanUcapan" placeholder="Tulis ucapan..." rows="3"></textarea>
+
+        <br><br>
+
+        <button onclick="kirimUcapan()">Kirim</button>
+
+        <div id="listUcapan"></div>
+
+         <h3 id="hadiah">Amplop Digital</h3>
+
+            <p>Bank BCA</p>
+            <p id="rek">1234567890</p>
+            <p>a.n Karsih he he he...</p>
+
+        <button onclick="copy()">Copy Rekening</button>
+            <br><br>
+        <button class="btn-close" onclick="Close()">Close</button>
+
+    </div>
+
+        <audio id="musik" loop>
+        <source src="03._Christina_Perri_A_Thousand_Years.mp3"></audio>
+
+<script>
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const nama = urlParams.get("to");
+
+    if(nama){
+
+        document.getElementById("namaTamu").innerText = nama;
+
+    }
+
+
+  
+
+        /* COUNTDOWN */
+
+        var tanggal = new Date("2026-04-13T10:00:00").getTime();
+
+        setInterval(function () {
+
+        var sekarang = new Date().getTime();
+        var jarak = tanggal - sekarang;
+
+        var hari = Math.floor(jarak / (1000 * 60 * 60 * 24));
+        var jam = Math.floor((jarak % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var menit = Math.floor((jarak % (1000 * 60 * 60)) / (1000 * 60));
+        var detik = Math.floor((jarak % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = hari;
+        document.getElementById("hours").innerHTML = jam;
+        document.getElementById("minutes").innerHTML = menit;
+        document.getElementById("seconds").innerHTML = detik;
+
+        }, 1000);
+
+        /* MAPS */
+        function maps(){
+            window.open("https://maps.google.com/?q=Lokasi+Pernikahan+Anda");
+}
+
+        /* COPY REKENING */
+
+        function copy() {
+
+        var rek = document.getElementById("rek").innerText;
+
+            navigator.clipboard.writeText(rek);
+
+        alert("Nomor rekening berhasil di copy");
+
+    }
+        window.onload = function(){
+        document.getElementById("loading").style.display="none";
+    }
+        
+           
+
+    </script>
+    <div id="popup" style="
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.95);
+            justify-content:center;
+            align-items:center;
+            z-index:999;
+            ">
+
+        <button onclick="prevFoto()" style="
+            position:absolute;
+            left:20px;
+            font-size:40px;
+            background:none;
+            border:none;
+            color:white;
+            cursor:pointer;
+            ">❮</button>
+
+        <img id="popupImg" style="max-width:90%;max-height:90%;border-radius:10px;">
+
+        <button onclick="nextFoto()" style="
+            position:absolute;
+            right:20px;
+            font-size:40px;
+            background:none;
+            border:none;
+            color:white;
+            cursor:pointer;
+            ">❯</button>
+
+        <button onclick="tutupFoto()" style="
+            position:absolute;
+            top:20px;
+            right:30px;
+            font-size:35px;
+            background:none;
+            border:none;
+            color:white;
+            cursor:pointer;
+            ">✕</button>
+    </div>
+
+<script>
+
+        const gambar = document.querySelectorAll(".gallery img");
+        const popup = document.getElementById("popup");
+        const popupImg = document.getElementById("popupImg");
+
+        let indexFoto = 0;gambar.forEach((img, index) => {
+            img.addEventListener("click", function () {
+            popup.style.display = "flex";
+            popupImg.src = this.src;
+            indexFoto = index;
+            });
+        });
+
+        function tutupFoto(){
+            popup.style.display = "none";
+        }
+
+        function nextFoto(){
+            if(indexFoto < gambar.length - 1){
+            indexFoto++;
+            popupImg.src = gambar[indexFoto].src;
+            }
+        }
+
+        function prevFoto(){
+            if(indexFoto > 0){
+            indexFoto--;
+            popupImg.src = gambar[indexFoto].src;
+            }
+        }
+        function kirimUcapan(){
+
+        var nama = document.getElementById("namaUcapan").value;
+        var pesan = document.getElementById("pesanUcapan").value;
+
+        var list = document.getElementById("listUcapan");
+
+        var div = document.createElement("div");
+
+        div.innerHTML = "<b>"+nama+"</b><br>"+pesan+"<hr>";
+
+        list.appendChild(div);
+
+        document.getElementById("namaUcapan").value="";
+        document.getElementById("pesanUcapan").value="";
+
+    }
+
+</script>
+<script>
+
+    function Close(){
+
+        document.getElementById("isi").style.display = "none";
+        document.getElementById("cover").style.display="flex";
+
+    var musik = document.getElementById("musik");
+        musik.pause();      // menghentikan lagu
+        musik.currentTime = 0; // mengembalikan lagu ke awal
+
+    }
+    function Open(){
+
+        document.getElementById("cover").style.display = "none";
+        document.getElementById("isi").style.display = "block";
+
+        var musik = document.getElementById("musik");
+        musik.play();
+
+    }
+</script>
+            <div class="menu">
+
+<a href="#home">Home</a>
+<a href="#galeri">Galeri</a>
+<a href="#lokasi">Lokasi</a>
+<a href="#ucapan">Ucapan</a>
+<a href="#penutup">Penutup</a>
+
+</div>
+</body>
+
+</html>
